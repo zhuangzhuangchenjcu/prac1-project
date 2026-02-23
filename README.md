@@ -4,7 +4,7 @@
 This project is created for Practical 1: Project Setup & GitHub Foundations.
 
 ## Team
-- ZHUANGZHUANG CHEN
+- ZHUANGZHUANG CHEN 
 
 ## Technologies
 - GitHub
