@@ -7,7 +7,7 @@ This project is created for Practical 1: Project Setup & GitHub Foundations.
 - ZHUANGZHUANG CHEN
 
 ## Technologies
-- GitHub
+- GitHub 
 - To be decided
 
 ## Initial Backlog Ideas
