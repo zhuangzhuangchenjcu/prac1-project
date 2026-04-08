@@ -1,29 +1,24 @@
 # Actual iteration-2 board, (see chapters 3 and 4), add your start and end dates 
 
-Checklist: 
+Start date: Week 5  
+End date: Week 8  
+
+Checklist:
+
 1. github entry timestamps
-2. User stories are correct: see p39
+2. User stories are correct
 
-* Assumed Velocity FROM iteration-1: ?? 
-* Number of developers: ??
-* Total estimated amount of work: YY days
+Assumed Velocity from iteration-1: 7 days  
+Number of developers: 1  
+Total estimated amount of work: 8 days  
 
-User stories or tasks (see chapter 4):
-1. [user story or task title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+User stories or tasks:
 
-In progress:
-* Task-2 (developer name or initials), date started
-* ...
+1. Shopping cart – priority High – 1 day  
+2. Checkout system – priority High – 1 day  
+3. Order management – priority High – 2 days  
+4. Vendor dashboard – priority High – 1 day  
+5. Menu CRUD – priority High – 2 days  
+6. Order status update – priority Medium – 1 day  
 
-Completed:
-* Task-3 (developer name or initials), date completed
-* ...
-
-### Burn Down for iteration-2 (see chapter 4):
-Update this at least once per week
-* 4 weeks left, xx days of estimated amount of work 
-* 2 weeks left, xx days
-* 1 weeks left, xx days
-* 0 weeks left, xx days
-* Actual Velocity: ?? 
+Total: 8 days
