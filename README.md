@@ -4,43 +4,78 @@
 This project is created for Practical 1: Project Setup & GitHub Foundations.
 
 ## Team
-- ZHUANGZHUANG CHEN 
+- ZHUANGZHUANG CHEN （solo project)
 
 ## Technologies
-- GitHub
-- To be decided
+-Python  
+-Django  
+-HTML  
+-CSS  
+-Bootstrap  
+-SQLite  
+-GitHub
 
 ## Initial Backlog Ideas
-See User_stories.md for the initial backlog and priorities.
+
+Customer:
+- register account
+- login
+- browse restaurants
+- view menu
+- add items to cart
+- update quantity
+- checkout order
+- view order history
+
+Vendor:
+- login as vendor
+- manage menu items
+- add new menu items
+- edit menu items
+- delete menu items
+- view customer orders
+- accept or reject orders
+- view order details
+- view dashboard statistics
 
 
 ## Iteration 1 [duration 3-4 weeks], add your start and end dates 
 
-* Goal is to have 2 iterations during a trimester of teaching.
-* Update the following during each week prac session
-* During pracs, you may experiment with using other github ways of tracking changes, e.g. via pull requests.
+Duration: Week 1 – Week 4
 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+Goal:
+Build basic system structure and database.
 
-Total: YY days
+Completed:
+- project setup
+- database design
+- user login system
+- restaurant model
+- menu model
+
+Total: 3 days
 
 
 ### Iteration 2 [duration 3-4 weeks], add your start and end dates
-Goal is to have 2 iterations during a trimester of teaching.
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
 
-Total: YY days
+Duration: Week 5 – Week 8
 
-### Not enough time/developers: 
-1. [user story title](./user_stories/user_story_01_title.md), priority XX, YY days 
-2. ...
+Goal:
+Implement main functionality.
 
-Total: YY days
+Completed:
+- shopping cart
+- checkout system
+- order management
+- vendor dashboard
+- menu CRUD
+- order status update
+
+Total: 4 days
 
 # Actual iterations
-1. [Iteration-1](./iteration_1.md)
-2. [Iteration-2](./iteration_2.md)
+
+1. Iteration 1 – Project setup and basic structure
+2. Iteration 2 – Core system implementation
 
 
