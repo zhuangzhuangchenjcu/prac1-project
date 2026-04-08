@@ -1,32 +1,24 @@
 # Actual iteration-1 board, (see chapters 3 and 4), add your start and end dates 
 
-Checklist: 
+Start date: Week 1  
+End date: Week 4  
+
+Checklist:
+
 1. github entry timestamps
-2. User stories are correct: see p39
+2. User stories are correct
 
-* Assumed Velocity: 7 days
-* Number of developers: 1
-* Total estimated amount of work: 7 days
+Assumed Velocity: 7 days  
+Number of developers: 1  
+Total estimated amount of work: 7 days  
 
-User stories or tasks (see chapter 4):
+User stories or tasks:
 
-1. Create user account, priority High, 2 days
-2. Add new tasks, priority High, 2 days
-3. Edit or delete tasks, priority Medium, 2 days
-4. Mark tasks as completed, priority Medium, 1 day
+1. User registration system – priority High – 1 day  
+2. User login system – priority High – 1 day  
+3. Design database models – priority High – 2 days  
+4. Restaurant model – priority High – 1 day  
+5. Menu model – priority High – 1 day  
+6. Basic page layout – priority Medium – 1 day  
 
-In progress:
-* Task-2 (developer name or initials), date started
-* ...
-
-Completed:
-* Task-3 (developer name or initials), date completed
-* ...
-
-### Burn Down for iteration-1 (see chapter 4):
-Update this at least once per week
-* 4 weeks left, xx days of estimated amount of work 
-* 2 weeks left, xx days
-* 1 weeks left, xx days
-* 0 weeks left, xx days
-* Actual Velocity: ?? 
+Total: 7 days
