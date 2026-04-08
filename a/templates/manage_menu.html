@@ -1,0 +1,147 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Menu Management</h2>
+    
+    <button class="btn btn-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#addMenuForm" aria-expanded="false" aria-controls="addMenuForm">
+        Add New Item
+    </button>
+    
+    <div class="collapse mb-4" id="addMenuForm">
+        <div class="card card-body">
+            <h5 class="card-title">New Item</h5>
+            <form method="POST">
+                <input type="hidden" name="action" value="add">
+                
+                <!-- Baidu AI Recognition -->
+                <div class="mb-3">
+                    <label class="form-label">Photo/Upload Recognition (AI Auto-fill)</label>
+                    <div class="input-group">
+                        <input type="file" class="form-control" id="ai-image-input" accept="image/*">
+                        <button class="btn btn-outline-secondary" type="button" id="btn-recognize">Recognize Ingredient</button>
+                    </div>
+                    <div id="recognition-status" class="form-text text-muted">Supports Baidu AI Recognition. Please configure API Key in utils/baidu_ai.py.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Item Name</label>
+                    <input type="text" class="form-control" name="name" id="dish-name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea class="form-control" name="description" id="dish-desc" rows="2"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-label">Price ($)</label>
+                    <input type="number" step="0.01" class="form-control" name="price" required>
+                </div>
+                <!-- Image URL removed -->
+                <button type="submit" class="btn btn-success">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for item in menu %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <p class="card-text"><strong>${{ item.price }}</strong></p>
+                </div>
+                <div class="card-footer bg-white border-top-0">
+                    <div class="d-flex justify-content-between">
+                        <button class="btn btn-sm btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editModal{{ item.id }}">Edit</button>
+                        <form method="POST" onsubmit="return confirm('Are you sure you want to delete?');">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="hidden" name="item_id" value="{{ item.id }}">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Modal -->
+            <div class="modal fade" id="editModal{{ item.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit Item</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="POST">
+                                <input type="hidden" name="action" value="edit">
+                                <input type="hidden" name="item_id" value="{{ item.id }}">
+                                <div class="mb-3">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="name" value="{{ item.name }}" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Description</label>
+                                    <textarea class="form-control" name="description">{{ item.description }}</textarea>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Price</label>
+                                    <input type="number" step="0.01" class="form-control" name="price" value="{{ item.price }}" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+            <div class="col-12">
+                <p class="text-muted">No items in menu.</p>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<script>
+    document.getElementById('btn-recognize').addEventListener('click', function() {
+        const fileInput = document.getElementById('ai-image-input');
+        const statusDiv = document.getElementById('recognition-status');
+        
+        if (fileInput.files.length === 0) {
+            statusDiv.textContent = 'Please select an image first';
+            statusDiv.className = 'form-text text-danger';
+            return;
+        }
+        
+        const file = fileInput.files[0];
+        const formData = new FormData();
+        formData.append('image', file);
+        
+        statusDiv.textContent = 'Recognizing...';
+        statusDiv.className = 'form-text text-primary';
+        
+        fetch('/api/recognize_food', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                statusDiv.textContent = 'Recognition failed: ' + data.error;
+                statusDiv.className = 'form-text text-danger';
+            } else {
+                statusDiv.textContent = 'Recognition successful! Auto-filled.';
+                statusDiv.className = 'form-text text-success';
+                
+                // Fill the form
+                document.getElementById('dish-name').value = data.name;
+                document.getElementById('dish-desc').value = `AI Result: ${data.name} (Confidence: ${(data.score * 100).toFixed(1)}%)`;
+            }
+        })
+        .catch(error => {
+            statusDiv.textContent = 'Network Error';
+            statusDiv.className = 'form-text text-danger';
+            console.error('Error:', error);
+        });
+    });
+</script>
+{% endblock %}

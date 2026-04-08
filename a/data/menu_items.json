@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "restaurant_id": 1,
+        "name": "Signature Fried Sauce Noodles",
+        "description": "Hand-rolled noodles with secret fried sauce, cucumber strips, bean sprouts.",
+        "price": 18.0,
+        "image": "https://images.unsplash.com/photo-1552611052-33e04de081de?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 2,
+        "restaurant_id": 1,
+        "name": "Beijing Stewed Offal",
+        "description": "The wheaten cake is soaked but not sticky, the meat is tender but not mushy.",
+        "price": 25.0,
+        "image": "https://images.unsplash.com/photo-1541544744-5e3a0199c314?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 3,
+        "restaurant_id": 1,
+        "name": "Rolling Donkey (Lvdagun)",
+        "description": "Soft and sweet, traditional snack with rich bean flavor.",
+        "price": 12.0,
+        "image": "https://images.unsplash.com/photo-1582650538743-c0d239164225?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 4,
+        "restaurant_id": 1,
+        "name": "Fermented Bean Juice & Fried Ring",
+        "description": "Unique Beijing taste, loved by those who love it.",
+        "price": 8.0,
+        "image": "https://images.unsplash.com/photo-1626804475297-411dbe6314c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 5,
+        "restaurant_id": 2,
+        "name": "Margherita Pizza",
+        "description": "Tomato sauce, mozzarella cheese, basil leaves.",
+        "price": 45.0,
+        "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 6,
+        "restaurant_id": 2,
+        "name": "Spaghetti Bolognese",
+        "description": "Classic tomato meat sauce, topped with Parmesan cheese.",
+        "price": 38.0,
+        "image": "https://images.unsplash.com/photo-1551183053-bf91b1dca034?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 7,
+        "restaurant_id": 2,
+        "name": "Caesar Salad",
+        "description": "Fresh lettuce, croutons, bacon, Caesar dressing.",
+        "price": 28.0,
+        "image": "https://images.unsplash.com/photo-1550304943-4f24f54ddde9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 8,
+        "restaurant_id": 2,
+        "name": "Cream of Mushroom Soup",
+        "description": "Rich creamy flavor, with fresh mushrooms.",
+        "price": 22.0,
+        "image": "https://images.unsplash.com/photo-1547592166-23acbe34071b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 9,
+        "restaurant_id": 3,
+        "name": "Bubble Tea",
+        "description": "Brown sugar pearls, mellow black tea, fresh milk.",
+        "price": 15.0,
+        "image": "https://images.unsplash.com/photo-1558857563-b31cfc36fa67?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 10,
+        "restaurant_id": 3,
+        "name": "Tiramisu",
+        "description": "Italian classic, ladyfingers, mascarpone cheese.",
+        "price": 32.0,
+        "image": "https://images.unsplash.com/photo-1571875257727-256c39da42af?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 11,
+        "restaurant_id": 3,
+        "name": "Strawberry Ice Cream",
+        "description": "Made with fresh strawberries, no additives.",
+        "price": 18.0,
+        "image": "https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 12,
+        "restaurant_id": 3,
+        "name": "Mango Pomelo Sago",
+        "description": "Mango, pomelo, sago, coconut milk.",
+        "price": 22.0,
+        "image": "https://images.unsplash.com/photo-1579954115545-a95591f28bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id": 13,
+        "restaurant_id": 4,
+        "name": "Item 1",
+        "description": "Description 1",
+        "price": 1.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 14,
+        "restaurant_id": 4,
+        "name": "Item 2",
+        "description": "Description 2",
+        "price": 2.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 15,
+        "restaurant_id": 5,
+        "name": "Test Item 1",
+        "description": "Test Description",
+        "price": 12321312.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 16,
+        "restaurant_id": 5,
+        "name": "Test Item 2",
+        "description": "Test Description",
+        "price": 21111.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 17,
+        "restaurant_id": 5,
+        "name": "Test Item 3",
+        "description": "Test Description",
+        "price": 223.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 18,
+        "restaurant_id": 5,
+        "name": "Test Item 4",
+        "description": "Test Description",
+        "price": 12312.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 19,
+        "restaurant_id": 5,
+        "name": "Test Item 5",
+        "description": "Test Description",
+        "price": 1111.0,
+        "image": "https://via.placeholder.com/150"
+    },
+    {
+        "id": 20,
+        "restaurant_id": 5,
+        "name": "1113332222",
+        "description": "333",
+        "price": 1122.0,
+        "image": "https://via.placeholder.com/150"
+    }
+]

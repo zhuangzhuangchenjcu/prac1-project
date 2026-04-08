@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "username": "vendor_chinese",
+        "email": "chinese@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "vendor"
+    },
+    {
+        "id": 2,
+        "username": "vendor_pizza",
+        "email": "pizza@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "vendor"
+    },
+    {
+        "id": 3,
+        "username": "vendor_dessert",
+        "email": "dessert@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "vendor"
+    },
+    {
+        "id": 4,
+        "username": "customer1",
+        "email": "c1@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "customer"
+    },
+    {
+        "id": 5,
+        "username": "customer2",
+        "email": "c2@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "customer"
+    },
+    {
+        "id": 6,
+        "username": "customer3",
+        "email": "c3@example.com",
+        "password": "scrypt:32768:8:1$FsZJUgxrHd4V7sh5$20bf2fde02c477b0534cb1747d706019cf891a39cc3cf26e27c03d3432e6fa63bce8153104ed564501dfb49f22ba8f38eef8cf50879d08e3274de99b0ff9a7c4",
+        "role": "customer"
+    },
+    {
+        "id": 7,
+        "username": "1",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$rsBdD1OB8DEAyb7Z$49a7df99c41149629c40b20d9d99396109b84aec5f45c5764090888750bfeb0332f373858b6ccf41d9d0adf3fbdea47ad513bd22bf1fe402bc0ace4c3a38a607",
+        "role": "customer"
+    },
+    {
+        "id": 8,
+        "username": "2",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$XJXvU4iIlrsELs0o$18e1b0710f6bb9d72e75abab6bb7ac65306ee1a029af14e0ae97ea973b91e648e954a7d419ef5fdeb204c6423af303c5807d613434b6ccdd03857edc7acde5db",
+        "role": "vendor"
+    },
+    {
+        "id": 9,
+        "username": "3",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$qDLtIupqcdDaUPps$18027ad3f880821894636600ae66ac50ab4818bf2a6762998049f1ee961c9d1065af8cad39c217fb21f6a7d8d081f68c6e70b9695afac676a0c983e2776e21bd",
+        "role": "customer"
+    },
+    {
+        "id": 10,
+        "username": "4",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$DtMfgGiU3PaBCLXw$b7fa5dae0bece1af2168133f040b28fee9a6d540c001433284e670f73c86e61387d21f3284eca6d8a0786649497ff2a0bdc0f1142d4d63f730d5e92aaf41d2ab",
+        "role": "vendor"
+    },
+    {
+        "id": 11,
+        "username": "11",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$KU9PAM74Ltp6EIJq$866b1649a6fac749ae590de8107d1ec38b0f8f77890cab9e3a0b63718554f9f4eff465b055a3a8b4344c35709ed7d105435a77110219bf1634c0092551ea87a1",
+        "role": "customer"
+    },
+    {
+        "id": 12,
+        "username": "12",
+        "email": "3153686806@qq.com",
+        "password": "scrypt:32768:8:1$ocYO98u9rwc6oYYw$6a6c6b169b922898195ebda05951cc41e6e9933819b562a6153e6ae9a8237889376ef6ad32ac6678c9c60eba66e3fb3f5c202a5a9daca88c5e69e1602b16b9d4",
+        "role": "customer"
+    }
+]

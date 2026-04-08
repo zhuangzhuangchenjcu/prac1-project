@@ -1,0 +1,75 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>New Orders</h2>
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td><a href="{{ url_for('order_detail', order_id=order.id) }}">#{{ order.id }}</a></td>
+                    <td>{{ order.username }}</td>
+                    <td>
+                        <ul class="list-unstyled">
+                            {% for item in order['items'] %}
+                                <li>{{ item.quantity }}x {{ item.name }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>${{ order.total_price }}</td>
+                    <td>
+                        {% if order.status == 'Pending' %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% elif order.status == 'Accepted' %}
+                            <span class="badge bg-info text-dark">Accepted</span>
+                        {% elif order.status == 'Preparing' %}
+                            <span class="badge bg-primary">Preparing</span>
+                        {% elif order.status == 'Delivering' %}
+                            <span class="badge bg-primary">Delivering</span>
+                        {% elif order.status == 'Completed' %}
+                            <span class="badge bg-success">Completed</span>
+                        {% elif order.status == 'Rejected' %}
+                            <span class="badge bg-danger">Rejected</span>
+                        {% else %}
+                            <span class="badge bg-secondary">{{ order.status }}</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ order.created_at }}</td>
+                    <td>
+                        <form method="POST" class="d-flex gap-2 flex-wrap">
+                            <input type="hidden" name="order_id" value="{{ order.id }}">
+                            {% if order.status == 'Pending' %}
+                                <button type="submit" name="status" value="Accepted" class="btn btn-sm btn-success">Accept</button>
+                                <button type="submit" name="status" value="Rejected" class="btn btn-sm btn-danger">Reject</button>
+                            {% elif order.status == 'Accepted' %}
+                                <button type="submit" name="status" value="Preparing" class="btn btn-sm btn-primary">Start Preparing</button>
+                            {% elif order.status == 'Preparing' %}
+                                <button type="submit" name="status" value="Delivering" class="btn btn-sm btn-primary">Start Delivery</button>
+                            {% elif order.status == 'Delivering' %}
+                                <button type="submit" name="status" value="Completed" class="btn btn-sm btn-success">Complete</button>
+                            {% endif %}
+                        </form>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="7" class="text-center">No orders.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Shopping Cart</h2>
+    {% if cart %}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>${{ item.price }}</td>
+                    <td>
+                        <form action="{{ url_for('update_cart') }}" method="POST" class="d-flex align-items-center gap-2">
+                            <input type="hidden" name="action" value="update">
+                            <input type="hidden" name="item_id" value="{{ item.item_id }}">
+                            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="10" class="form-control form-control-sm" style="width: 60px;">
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Update</button>
+                        </form>
+                    </td>
+                    <td>${{ item.price * item.quantity }}</td>
+                    <td>
+                        <form action="{{ url_for('update_cart') }}" method="POST">
+                            <input type="hidden" name="action" value="remove">
+                            <input type="hidden" name="item_id" value="{{ item.item_id }}">
+                            <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+                <tr class="table-active">
+                    <td colspan="3" class="text-end fw-bold">Total:</td>
+                    <td class="fw-bold">${{ total }}</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="d-flex justify-content-end gap-3 mt-4">
+        <a href="{{ url_for('restaurant_list') }}" class="btn btn-secondary">Continue Shopping</a>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-success btn-lg" data-bs-toggle="modal" data-bs-target="#paymentModal">
+          Checkout
+        </button>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="paymentModalLabel">Payment</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Total Amount: <strong>${{ total }}</strong></p>
+            <div class="mb-3">
+                <label for="cardNumber" class="form-label">Card Number (Mock)</label>
+                <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" value="1234 5678 9012 3456" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="expiry" class="form-label">Expiry</label>
+                <input type="text" class="form-control" id="expiry" placeholder="MM/YY" value="12/25" readonly>
+            </div>
+            <div class="alert alert-info">
+                This is a mock payment. No real money will be charged.
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            <form action="{{ url_for('checkout') }}" method="POST">
+                <button type="submit" class="btn btn-primary">Pay Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="alert alert-info">
+        Your cart is empty. <a href="{{ url_for('restaurant_list') }}">Browse Restaurants</a> to add items.
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

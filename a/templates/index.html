@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to FeedMe!</h1>
+        <p class="lead">Order food from your favorite restaurants, or manage your restaurant with ease.</p>
+        <hr class="my-4">
+        <p>Start your food journey today.</p>
+        <div class="d-flex justify-content-center gap-3">
+            <a class="btn btn-primary btn-lg" href="{{ url_for('restaurant_list') }}" role="button">Browse Restaurants</a>
+            {% if not session.user_id %}
+            <a class="btn btn-success btn-lg" href="{{ url_for('register') }}" role="button">Register as Vendor</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

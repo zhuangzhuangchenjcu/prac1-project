@@ -1,0 +1,70 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Order Details #{{ order.id }}</h2>
+    <div class="card mb-4">
+        <div class="card-header bg-light">
+            <h5 class="mb-0">Order Summary</h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Restaurant:</strong> {{ restaurant.name }}</p>
+                    <p><strong>Status:</strong> 
+                        {% if order.status == 'Pending' %}
+                            <span class="badge bg-warning text-dark">Pending</span>
+                        {% elif order.status == 'Accepted' %}
+                            <span class="badge bg-info text-dark">Accepted</span>
+                        {% elif order.status == 'Preparing' %}
+                            <span class="badge bg-primary">Preparing</span>
+                        {% elif order.status == 'Delivering' %}
+                            <span class="badge bg-primary">Delivering</span>
+                        {% elif order.status == 'Completed' %}
+                            <span class="badge bg-success">Completed</span>
+                        {% elif order.status == 'Rejected' %}
+                            <span class="badge bg-danger">Rejected</span>
+                        {% else %}
+                            <span class="badge bg-secondary">{{ order.status }}</span>
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <p><strong>Date:</strong> {{ order.created_at }}</p>
+                    <p><strong>Total:</strong> ${{ order.total_price }}</p>
+                </div>
+            </div>
+            
+            <hr>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Unit Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in order['items'] %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>${{ item.price }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ item.price * item.quantity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer text-muted text-center">
+            {% if session.role == 'customer' %}
+            <a href="{{ url_for('order_history') }}" class="btn btn-secondary">Back to History</a>
+            {% else %}
+            <a href="{{ url_for('vendor_orders') }}" class="btn btn-secondary">Back to Orders</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
